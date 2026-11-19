@@ -1,16 +1,5 @@
 package siga;
 
-/**
- * COMPONENTE EXTERNO - simula o inventario patrimonial da instituicao, mantido por
- * outra equipe.
- *
- * NAO ALTERE ESTA CLASSE. Ela representa uma dependencia de terceiros cujo
- * codigo-fonte voce nao controla.
- *
- * Formato devolvido: cada linha e {codigo, descricao, situacao}, em que a
- * situacao vem como "D" (disponivel) ou "B" (baixado) - e, por descuido do
- * sistema de origem, as vezes em minuscula.
- */
 public class InventarioLegadoWS {
 
     public String[][] consultarEquipamentos() {
