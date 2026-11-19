@@ -1,20 +1,15 @@
 package siga;
 
-/**
- * Demonstra os dois problemas e, ao final, roda a VerificacaoRapida.
- *
- * Voce VAI precisar alterar a montagem abaixo quando resolver o Problema 1
- * - e so isso. O resto do arquivo pode ficar como esta.
- */
 public class Main {
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         System.out.println("=== Sistema de Reserva de Laboratorio - Prova Pratica ===");
         System.out.println();
 
         InventarioLegadoWS legado = new InventarioLegadoWS();
-        CatalogoEquipamentos catalogo = new CatalogoEquipamentos(legado);
-        RelatorioAcervo relatorio = new RelatorioAcervo(legado);
+        InventarioService inventario = new InventarioLegadoAdapter(legado);
+        CatalogoEquipamentos catalogo = new CatalogoEquipamentos(inventario);
+        RelatorioAcervo relatorio = new RelatorioAcervo(inventario);
 
         System.out.println("1) O mesmo dado, convertido em dois lugares");
         System.out.println("   Disponiveis segundo o catalogo:");
