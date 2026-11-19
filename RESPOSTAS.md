@@ -42,20 +42,21 @@ inventario patrimonial, e por que ela é um problema:**
 ## Padrão aplicado ao Problema 1
 
 **O problema que ele resolve (descreva antes de nomear o padrão):**
-
+**R:** Problema de incompatibilidade entre interface requirida e pela fornecida por componente externo que não pode ser modificado. Centrzaliza a conversão e o tratatmento dos dados em um ponto só e permite as classes que consomem dependam de abstração estável, eliminando aclopamento com a classe concreta
 
 **Nome do padrão:**
-
+**R:** Adapter
 
 **Alternativa descartada e por que ela não resolveria por completo:**
-
+**R:** Foi alterar diretamente o serviço legado "InventarioLegadoWS' para que ele voltasse "List<Equipamento>" tratado. É inviavel porque: 1) serviço legado é mantido por outra equipe e sua alteração é proibida. 2) outros sistemas podem depender do contrarto atual. 3) poluir o serviço patrimonial da instituição com classes de dominioviolaria a separação de contexto arquitetura. 4) caso "CatalogoEquipamentos" e "RelatorioAcervo" continuassem dependendo diratemente da classe concrera do serviço sem uma interface intermediaria o DIP continuaria sendo violado.
 
 ## Padrão aplicado ao Problema 2
 
 **O problema que ele resolve (descreva antes de nomear o padrão):**
-
+**R:** Resolve o problema de objetos que comportamento e regras de transição variam conforme seu estado interno. Elimino condicionas espalhadas e encapsulando o comportamneto e as transições separadamente em polimorfismo que implementa contarto comum. Assim a entidade de contexto apenas delega a execução
 
 **Nome do padrão:**
-
+**R:** State
 
 **Alternativa descartada e por que ela não resolveria por completo:**
+**R:** Substituir o campo "String situacao" por um tipo enumerado mantendo estruturas switch ou if nos métodps de "Reserva". Embora enum melhore a segurança de tipos ao eliminar erros de digitação em strings literais, ele não resolve o arquitetural, então as regras de transiçaõ continuariam espalhadas por varios métodos de "Reserva". A complexidade ciclomáticanão seria reduzida e a inclusão de um novo estado ainda ia exigir alterar a classe "Reserva" e os seus métodos, violando OCP. Além disso, isso não permite atender a exigencia do enunciado de manter cada métodos público de mutação sem nenhum "if".
