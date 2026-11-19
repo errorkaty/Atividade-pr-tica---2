@@ -27,13 +27,13 @@ inventario patrimonial, e por que ela é um problema:**
 ## Problema 2 — o ciclo de vida de Reserva
 
 **Em que consiste o problema, e o que acontece quando o sistema cresce:**
-
+**R:** O problema consiste em modelar e controlar o ciclo de vida da entidade "Reserva" por meio de uma variável tipo "String" ("situacao") e de "if/else" espalhadas pelos métodos públicos, como "retirar()", "devolver()" e "cancrlar()". O sistema cresce e surgem novos estados ou transições, como "RESERVADA", "CANCELADA" e "EXPIRADA", os métodos afetados precisam ser reabertos e modificados para incluir novos ramos condicionais. Isso aumenta a complexdade ciclomática, compromete o encapsulamento do ciclo de vida e eleva o risco de erros em tempo de execução causados por fslhas de digitação em strings literais(magics strings).
 
 **Princípio SOLID violado:**
-
+**R:** Viola o Princípio Aberto/Fechado (OCP), uma vez que a classe "Reserva' não está fechada para modificação quando novas fases ou transições precisam ser suportadas. Viola também o Princípio da Responsabilidade Única (SRP), pois "Reservs" acumula a gestão dos dados da reserva e a lógica/regras detalhadas de cada um dos estados e suas transições permitidas e proibidas.
 
 **Classes afetadas (pelo nome):**
-
+**R:** "Reserva"
 
 ---
 
