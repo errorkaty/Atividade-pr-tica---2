@@ -4,17 +4,6 @@ import java.util.List;
 
 /**
  * BRINDE - nao vale nota e nao precisa ser alterado.
- *
- * Confere, executando, duas coisas que o enunciado exige:
- *   (A) o PAT-1003 tem a MESMA situacao no catalogo e no relatorio;
- *   (B) o ciclo de vida de Reserva continua exatamente o de hoje.
- *
- * Antes de voce refatorar, (A) ja esta VERMELHO - e a prova de que o
- * Problema 1 existe. Os seis casos de (B) ja estao VERDES e devem
- * CONTINUAR verdes: se um deles virar vermelho, a sua refatoracao mudou o
- * comportamento, e o enunciado pede que ele seja preservado.
- *
- * Nao depende de biblioteca nem de internet. Roda junto com o Main.
  */
 public final class VerificacaoRapida {
 
